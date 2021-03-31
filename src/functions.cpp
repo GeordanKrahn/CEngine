@@ -1,6 +1,7 @@
 //This class file is the implementation of include/functions.h
 
 #include <cmath>
+#include <tuple>
 #include "../include/functions.h"
 
 //Angle conversions degrees <--> radians
@@ -23,6 +24,6 @@ double quadraticNegative(double a, double b, double c)
 
 double quadraticPositive(double a, double b, double c)
 {
-   double b2 = b * b, ac4 = 4 * a * c, a2 = 2 * a, root = b2 - ac4;
+  double b2 = b * b, ac4 = 4 * a * c, a2 = 2 * a, root = b2 - ac4;
   return (-1 * b + sqrt(root)) / a2;
 }
