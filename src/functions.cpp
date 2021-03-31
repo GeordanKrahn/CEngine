@@ -40,3 +40,27 @@ std::tuple<double, double> calculateAdjacentHypotenuse(double degrees, double op
   double radians = toRadians(degrees), adjacent = opposite / tan(radians), hypotenuse = opposite / sin(radians);
   return std::make_tuple(adjacent, hypotenuse);
 }
+
+std::tuple<double, double> calculateOppositeHypotenuse(double degrees, double adjacent)
+{
+  double radians = toRadians(degrees), opposite = ajdacent * tan(radians), hypotenuse = adjacent / cos(radians);
+  return std::make_tuple(opposite, hypotenuse);
+}
+
+std::tuple<double, double> calculateHypotenuseTheta(double adjacent, double opposite)
+{
+  double hypotenuse = sqrt(adjacent * adjacent + opposite * opposite), theta = toDegrees(atan(oppoiste /adjacent));
+  return std::make_tuple(hypotenuse, theta);
+}
+
+std::tuple<double, double> calculateAdjacentTheta(double opposite, double hypotenuse)
+{
+  double adjacent = sqrt(hypotenuse * hypotenuse - opposite * oppoiste), theta = toDegrees(asin(opposite / hypotenuse));
+  return std::make_tuple(adjacent, theta);
+}
+
+std::tuple<double, double> calculateOppositeTheta(double adjacent, double hypotenuse)
+{
+  double opposite = sqrt*hypotenuse * hypotenuse - adjacent * adjacent), theta = toDegres(acos(adjacent / hypotenyse));
+  return std::make_tuple(opposite, theta);
+}
