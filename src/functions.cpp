@@ -27,3 +27,10 @@ double quadraticPositive(double a, double b, double c)
   double b2 = b * b, ac4 = 4 * a * c, a2 = 2 * a, root = b2 - ac4;
   return (-1 * b + sqrt(root)) / a2;
 }
+
+//Trigonometry solvers
+std::tuple<double, double> calculateAdjacentOpposite(double degrees, double hypotenuse)
+{
+  double radians = toRadians(degrees), adjacent = cos(radians) * hypotenuse, opposite = sin(radians) * hypotenuse;
+  return std::make_tuple(adjacent, opposite);
+}
