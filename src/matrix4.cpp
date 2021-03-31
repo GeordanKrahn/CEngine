@@ -1,4 +1,4 @@
-//This class represents a 4x4 matrix, i.e.,
+//This class is the implmentation of include/matrix4.h
 //     ┌                          ┐
 //     | M11    M12    M13    M14 |
 //     | M21    M22    M23    M24 |

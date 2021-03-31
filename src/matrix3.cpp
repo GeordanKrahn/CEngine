@@ -1,4 +1,4 @@
-//This class represents a 3x3 matrix, i.e.,
+//This class is the implementation if include/matrix3.h
 //     ┌                   ┐
 //     | M11    M12    M13 |
 //     | M21    M22    M23 |

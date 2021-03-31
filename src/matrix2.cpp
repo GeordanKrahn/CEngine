@@ -1,4 +1,4 @@
-//This class represents a 2x2 matrix i.e.,
+//This class is the implementation of incldue/matrix2.h
 //     ┌            ┐
 //     | M11    M12 |
 //     | M21    M22 |
