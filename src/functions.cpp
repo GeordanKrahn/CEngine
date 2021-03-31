@@ -34,3 +34,9 @@ std::tuple<double, double> calculateAdjacentOpposite(double degrees, double hypo
   double radians = toRadians(degrees), adjacent = cos(radians) * hypotenuse, opposite = sin(radians) * hypotenuse;
   return std::make_tuple(adjacent, opposite);
 }
+
+std::tuple<double, double> calculateAdjacentHypotenuse(double degrees, double opposite)
+{
+  double radians = toRadians(degrees), adjacent = opposite / tan(radians), hypotenuse = opposite / sin(radians);
+  return std::make_tuple(adjacent, hypotenuse);
+}
