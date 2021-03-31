@@ -1,1 +1,1 @@
-//This is a Point in 2D space
+//This class represents a Point in 2D space
