@@ -9,11 +9,25 @@ class Point2
     double m_Y;
 
   public:
-    double getX() { return m_X; }
-    //void setX(double x) { m_X = x; }
+    double getX() 
+    { 
+      return m_X; 
+    }
+  
+    void setX(double x)
+    { 
+      m_X = x; 
+    }
 
-    //void setY(double y) { m_Y = y; }
-    double getY() { return m_Y; }
+    void setY(double y)
+    { 
+      m_Y = y;
+    }
+  
+    double getY()
+    { 
+      return m_Y; 
+    }
 
     Point2()
     {
