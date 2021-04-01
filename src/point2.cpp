@@ -1,6 +1,6 @@
 //This class is the implementation of include/point2.h
 #include<cmath>
-//#include "../include/point2.h"
+#include <../include/point2.h>
 
 class Point2
 {
