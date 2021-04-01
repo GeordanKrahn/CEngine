@@ -11,9 +11,9 @@ class Point2
   
   public:
     double getX();
-    //void setX(double x) { m_X = x; }
+    void setX(double x);
   
-    //void setY(double y) { m_Y = y; }
+    void setY(double y);
     double getY();
   
     Point2();
