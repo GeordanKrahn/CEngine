@@ -31,5 +31,11 @@ namespace Engine
         {
             return !(a==b);
         }
+        // Left shift operator for cout compatibility
+        std::ostream& operator <<(std::ostream& cout, const Point2D& a)
+        {
+            cout << "P(" << a.X << "," << a.Y << ")";
+            return cout;
+        }
     }
 }
