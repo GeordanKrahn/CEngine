@@ -14,9 +14,9 @@ namespace Engine
         {
             return sqrt( pow(b.X - X, 2) + pow(b.Y - Y, 2));
         }
-        Point2D * Point2D::MidPoint(const Point2D & b) const
+        Point2D Point2D::MidPoint(const Point2D & b) const
         {
-            return new Point2D(0.5 * (b.X + X), 0.5 * (b.Y + Y));
+            return Point2D(0.5 * (b.X + X), 0.5 * (b.Y + Y));
         }
         // non member operator overloads
         Point2D operator *(const double & lh, const Point2D & rh)

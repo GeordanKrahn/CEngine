@@ -80,7 +80,21 @@ void TestSetters()
     actual.SetX(x);
     actual.SetY(y);
     Assert::AreEqual(expected, actual, "Test Setters");
+}
 
+void TestSegmentLength()
+{
+    double expected = 5;
+    Point2D a = Point2D(0, 0), b = Point2D(3, 4);
+    double actual = a.SegmentLength(b);
+    Assert::AreEqual(expected, actual, "Test Segment Length");
+}
+
+void TestMidPoint()
+{
+    Point2D a = Point2D(0, 0), b = Point2D(-3, 4), expected = Point2D(-1.5, 2);
+    Point2D actual = a.MidPoint(b);
+    Assert::AreEqual(expected, actual, "Test Mid Point");
 }
 
 // Test Point2D
@@ -96,9 +110,9 @@ void RunTestPoint2D()
 
     TestSetters();
 
-    // Test Segment Length
+    TestSegmentLength();
 
-    // Test Midpoint
+    TestMidPoint();
 
     // Test Equality
 
