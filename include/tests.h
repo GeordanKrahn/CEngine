@@ -21,19 +21,20 @@ public:
     template<typename T>
     static void AreEqual(T expected, T actual, const char* testName)
     {
+        cout.precision(10);
         auto timerStart = chrono::steady_clock::now();
         bool isRunning = false, isEqual = expected == actual;
         auto msg = [&]()->void { cout << "Test " << (!isRunning ? TestCounts.tests : ++TestCounts.tests) << ": " << (isRunning ? "Running " : "Finished ") << testName << endl; };
         auto output = [&]()->void
         {
-            cout << (isEqual ? "Test Passed" : "Test Failed") << "\n" << "Expected:" << expected << "\n" << "Actual:" << actual << endl;
+            cout << "Status: " << (isEqual ? "Passed" : "Failed") << endl;
+            if (!isEqual) { cout << "Expected: " << expected << "\n" << "Actual: " << actual << endl; }
             TestCounts.pass = isEqual ? ++TestCounts.pass : TestCounts.pass;
         };
         isRunning = true;
         msg();
         output();
         isRunning = false;
-        msg();
         auto timerEnd = chrono::steady_clock::now();
         auto difference = (timerEnd - timerStart).count();
         cout << "Test completed in: " << difference << " ns\n" << endl;
@@ -80,7 +81,7 @@ void TestAssignmentCopyConstructor()
 // void SetY(double Y);
 void TestSetters()
 {
-    double x = 12.4334, y = 53.333444;
+    double x = 12.4334, y = 53.333445;
     Point2D expected = Point2D(12.4334, 53.333444);
     Point2D actual = Point2D();
     actual.SetX(x);
@@ -221,5 +222,4 @@ void RunAllTests()
     RunTestMatrix4D();
     RunTestQuaternion();
     RunTestBody();
-    Passed();
 }

@@ -41,7 +41,7 @@ namespace Engine
         // Left shift operator for cout compatibility
         std::ostream& operator <<(std::ostream& cout, const Point2D& a)
         {
-            cout << "P(" << a.X << "," << a.Y << ")";
+            cout << "P(" << a.X << ", " << a.Y << ")";
             return cout;
         }
     }
