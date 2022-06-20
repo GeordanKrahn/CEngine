@@ -18,6 +18,13 @@ namespace Engine
         {
             return Point2D(0.5 * (b.X + X), 0.5 * (b.Y + Y));
         }
+
+        // operator overloads
+        Point2D Point2D::operator *(const double& rh)
+        {
+            return Point2D(X * rh, Y * rh);
+        }
+
         // non member operator overloads
         Point2D operator *(const double & lh, const Point2D & rh)
         {

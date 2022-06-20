@@ -42,6 +42,8 @@ namespace Engine
         // class methods
             double SegmentLength(const Point2D & b) const;
             Point2D MidPoint(const Point2D & b) const;
+        // Operator Overloads
+            Point2D operator *(const double& rh);
         };
 
         // Operator Overloads

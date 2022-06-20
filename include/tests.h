@@ -41,6 +41,7 @@ public:
 };
 
 // Run Point2D Tests
+// Point2D()
 void TestEmptyConstructor()
 {
     Point2D actual = Point2D();
@@ -48,6 +49,7 @@ void TestEmptyConstructor()
     Assert::AreEqual(expected, actual, "Test Empty Constructor");
 }
 
+// Point2D(double X, double Y)
 void TestGreedyConstructor()
 {
     Point2D expected = Point2D(3.1415,7.777777);
@@ -56,6 +58,7 @@ void TestGreedyConstructor()
     Assert::AreEqual(expected, actual, "Test Greedy Constructor");
 }
 
+// Point2D(const Point2D& b)
 void TestCopyConstructor()
 {
     Point2D expected = Point2D(15.24, 67.43333);
@@ -64,6 +67,7 @@ void TestCopyConstructor()
     Assert::AreEqual(expected, actual, "Test Copy Constructor");
 }
 
+// Point2D & operator = (Point2D & rh)
 void TestAssignmentCopyConstructor()
 {
     Point2D expected = Point2D(15.24, 67.43333);
@@ -72,6 +76,8 @@ void TestAssignmentCopyConstructor()
     Assert::AreEqual(expected, actual, "Test Copy Assignment Constructor");
 }
 
+// void SetX(double X);
+// void SetY(double Y);
 void TestSetters()
 {
     double x = 12.4334, y = 53.333444;
@@ -82,6 +88,7 @@ void TestSetters()
     Assert::AreEqual(expected, actual, "Test Setters");
 }
 
+// double SegmentLength(const Point2D & b) const;
 void TestSegmentLength()
 {
     double expected = 5;
@@ -90,6 +97,7 @@ void TestSegmentLength()
     Assert::AreEqual(expected, actual, "Test Segment Length");
 }
 
+// Point2D MidPoint(const Point2D & b) const;
 void TestMidPoint()
 {
     Point2D a = Point2D(0, 0), b = Point2D(-3, 4), expected = Point2D(-1.5, 2);
@@ -97,29 +105,56 @@ void TestMidPoint()
     Assert::AreEqual(expected, actual, "Test Mid Point");
 }
 
+// bool operator ==(const Point2D& a, const Point2D& b);
+void TestEquality()
+{
+    Point2D a = Point2D(4, 2.222), b = Point2D(4, 2.222);
+    bool expected = true;
+    bool actual = a == b;
+    Assert::AreEqual(expected, actual, "Test Equality");
+}
+
+// bool operator !=(const Point2D & a, const Point2D & b)
+void TestInequality()
+{
+    Point2D a = Point2D(4, 2.222), b = Point2D(4, 2.222);
+    bool expected = false;
+    bool actual = a != b;
+    Assert::AreEqual(expected, actual, "Test Inequality");
+}
+
+// Point2D operator *(const double& lh, const Point2D& rh);
+void TestScalarMultiplication_NonMember()
+{
+    double multiple = 1.5;
+    Point2D expected = Point2D(6, -9), point = Point2D(4, -6);
+    Point2D actual = multiple * point;
+    Assert::AreEqual(expected, actual, "Test Scalar Multiplication - non member overload");
+}
+
+// Point2D operator *(const double& rh);
+void TestScalarMultiplication_Member()
+{
+    double multiple = 1.5;
+    Point2D expected = Point2D(6, -9), point = Point2D(4, -6);
+    Point2D actual = point * multiple;
+    Assert::AreEqual(expected, actual, "Test Scalar Multiplication - member overload");
+}
+
 // Test Point2D
 void RunTestPoint2D()
 {
     TestEmptyConstructor();
-
     TestGreedyConstructor();
-
     TestCopyConstructor();
-    
     TestAssignmentCopyConstructor();
-
     TestSetters();
-
     TestSegmentLength();
-
     TestMidPoint();
-
-    // Test Equality
-
-    // Test Inequality
-
-    // Test Scalar Multiplication
-
+    TestEquality();
+    TestInequality();
+    TestScalarMultiplication_NonMember();
+    TestScalarMultiplication_Member();
 }
 
 // Test Functions
