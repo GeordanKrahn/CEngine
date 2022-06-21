@@ -53,6 +53,5 @@ namespace Engine
         bool operator !=(const Point2D& a, const Point2D& b);
         // Left shift operator for cout compatibility
         std::ostream& operator <<(std::ostream& cout, const Point2D & a);
-        
     }
 }
