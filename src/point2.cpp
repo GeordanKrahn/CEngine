@@ -1,7 +1,7 @@
 //This class is the implementation of include.point2.h
 #pragma once
-#include "point2.h"
-#include <math.h>
+#include "../include/point2.h"
+
 namespace Engine
 {
     namespace Mathematics
@@ -30,16 +30,18 @@ namespace Engine
         {
             return Point2D(lh * rh.X, lh * rh.Y);
         }
-        bool operator ==(const Point2D & a, const Point2D & b)
+        bool operator ==(const Point2D& a, const Point2D& b)
         {
-            return (a.X == b.X && a.Y == b.Y);
+            return a.X == b.X && a.Y == b.Y;
         }
-        bool operator !=(const Point2D & a, const Point2D & b)
+
+        bool operator !=(const Point2D& a, const Point2D& b)
         {
-            return !(a==b);
+            return a.X != b.X || a.Y != b.Y;
         }
+
         // Left shift operator for cout compatibility
-        std::ostream& operator <<(std::ostream& cout, const Point2D& a)
+        std::ostream& operator <<(std::ostream& cout, const Point2D & a)
         {
             cout << "P(" << a.X << ", " << a.Y << ")";
             return cout;

@@ -51,8 +51,8 @@ namespace Engine
         Point2D operator *(const double& lh, const Point2D& rh);
         bool operator ==(const Point2D& a, const Point2D& b);
         bool operator !=(const Point2D& a, const Point2D& b);
-
         // Left shift operator for cout compatibility
-        std::ostream& operator <<(std::ostream& cout, const Point2D& a);
+        std::ostream& operator <<(std::ostream& cout, const Point2D & a);
+        
     }
 }

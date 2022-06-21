@@ -1,1 +1,3 @@
 .vs/
+UnitTests/x64/
+UnitTests/*.vcxproj
