@@ -26,5 +26,5 @@
 
 namespace Testing
 {
-	auto roundTo8th = [=](const double& val)->long { return (long)round(100000000 * val); };
+	auto roundTo8th = [=](const double& val)->long long{ return (long long)(100000000.0 * val); };
 }
