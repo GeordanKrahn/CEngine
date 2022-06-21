@@ -23,3 +23,8 @@
 #include "../src/vector3.cpp"
 
 #include "gtest/gtest.h"
+
+namespace Testing
+{
+	auto roundTo8th = [=](const double& val)->long { return (long)round(100000000 * val); };
+}
