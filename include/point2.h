@@ -11,34 +11,23 @@ namespace Engine
         {
         private:
         // properties
-            double _X;
-            double _Y;
+            double* _X;
+            double* _Y;
         public:
         // Setter & Getters
-            const double & X = _X;
-            const double & Y = _Y;
-            void SetX(double X);
-            void SetY(double Y);
+            const double& X = *_X;
+            const double& Y = *_Y;
+            void SetX(double X) { *_X = X; }
+            void SetY(double Y) { *_Y = Y; }
         
         // Constructors
-            Point2D() : _X(0), _Y(0) {}
-            Point2D(double X, double Y) : _X(X), _Y(Y) {}
-            Point2D(const Point2D & b) : _X(b.X), _Y(b.Y) {}
+            Point2D() : _X(new double(0)), _Y(new double(0)) {}
+            Point2D(const double& X, const double& Y) : _X(new double(X)), _Y(new double(Y)) {}
+            Point2D(const Point2D & b) : _X(new double(b.X)), _Y(new double(b.Y)) {}
+        // Destructor
+            ~Point2D();
         // copy constructor and assignment overload.
-            Point2D & operator = (Point2D & rh)
-            {
-                Point2D *ref = new Point2D();
-                if (this != nullptr)
-                {
-                    ref = this;
-                }
-                else
-                {
-                    delete ref;
-                    ref = nullptr;
-                }
-                return *ref;
-            }
+            Point2D operator =(const Point2D& rh) { return Point2D(rh); }
         // class methods
             double SegmentLength(const Point2D & b) const;
             Point2D MidPoint(const Point2D & b) const;

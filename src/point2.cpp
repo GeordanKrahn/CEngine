@@ -6,9 +6,6 @@ namespace Engine
 {
     namespace Mathematics
     {
-        // setters
-        void Point2D::SetX(double X) { _X = X; }
-        void Point2D::SetY(double Y) { _Y = Y; }
         // class methods
         double Point2D::SegmentLength(const Point2D & b) const
         {
@@ -17,6 +14,15 @@ namespace Engine
         Point2D Point2D::MidPoint(const Point2D & b) const
         {
             return Point2D(0.5 * (b.X + X), 0.5 * (b.Y + Y));
+        }
+
+        // Destructor
+        Point2D::~Point2D()
+        {
+            delete _X;
+            _X = nullptr;
+            delete _Y;
+            _Y = nullptr;
         }
 
         // operator overloads
