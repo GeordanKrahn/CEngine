@@ -4,10 +4,6 @@
 //     | M21    M22 |
 //     └            ┘
 #pragma once
-#include <iostream>
-#include <ostream>
-#include <math.h>
-#include <memory>
 #include "../include/matrix2.h"
 namespace Engine
 {
