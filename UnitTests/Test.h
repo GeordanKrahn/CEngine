@@ -29,5 +29,5 @@
 
 namespace Testing
 {
-	auto roundTo = [&](const double& val, const int& place)->long long {	return (long long)round(pow(10, (double)place - 1) * val);};
+	auto roundTo = [&](const double& val, const int& place)->long long {	return (long long)round(pow(10, (double)place - 1.0) * val);};
 }

@@ -91,14 +91,14 @@ namespace Engine
 		{
 			double det = Determinant();
 			return Matrix_3x3(	Matrix_2x2(_22, _23, _32, _33).Determinant() / det, 
-								-Matrix_2x2(_21, _23, _31, _33).Determinant() / det,
-								Matrix_2x2(_21, _22, _31, _32).Determinant() / det,
-								-Matrix_2x2(_12, _13, _32, _33).Determinant() / det,
-								Matrix_2x2(_11, _13, _31, _33).Determinant() / det,
-								-Matrix_2x2(_11, _12, _31, _32).Determinant() / det,
-								Matrix_2x2(_12, _13, _22, _23).Determinant() / det,
-								-Matrix_2x2(_11, _13, _21, _23).Determinant() / det,
-								Matrix_2x2(_11, _12, _21, _22).Determinant() / det);
+				-Matrix_2x2(_12, _13, _32, _33).Determinant() / det,	 
+				Matrix_2x2(_12, _13, _22, _23).Determinant() / det,
+				-Matrix_2x2(_21, _23, _31, _33).Determinant() / det, 
+				Matrix_2x2(_11, _13, _31, _33).Determinant() / det,	
+				-Matrix_2x2(_11, _13, _21, _23).Determinant() / det,		
+				Matrix_2x2(_21, _22, _31, _32).Determinant() / det, 
+				-Matrix_2x2(_11, _12, _31, _32).Determinant() / det,     
+				Matrix_2x2(_11, _12, _21, _22).Determinant() / det);
 		}
 	}
 }
