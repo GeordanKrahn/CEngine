@@ -27,16 +27,16 @@ namespace Engine
 			Vector3(const double& x, const double& y, const double& z) : _x(new double(x)), _y(new double(y)), _z(new double(z)) {}
 			Vector3(const Vector3& v) : _x(new double(v.x)), _y(new double(v.y)), _z(new double(v.z)) {}
 			// assignment overload
-			Vector3 operator =(const Vector3& v) { return Vector3(v); }
+			Vector3 operator =(const Vector3& v) const { return Vector3(v); }
 			//methods
 			double Magnitude() const;
 			static double DotProduct(const Vector3& a, const Vector3& b) { return (a.x * b.x) + (a.y * b.y) + (a.z * b.z); }
-			double AngleBetweenVectors(const Vector3& v);
+			double AngleBetweenVectors(const Vector3& v) const;
 			void Normalize();
 			//member operator overloads
-			Vector3 operator +(const Vector3& v) { return Vector3(x + v.x, y + v.y, z + v.z); }
-			Vector3 operator -(const Vector3& v) { return Vector3(x - v.x, y - v.y, z - v.z); }
-			Vector3 operator *(const double& s) { return Vector3(x * s, y * s, z * s); }
+			Vector3 operator +(const Vector3& v) const { return Vector3(x + v.x, y + v.y, z + v.z); }
+			Vector3 operator -(const Vector3& v) const { return Vector3(x - v.x, y - v.y, z - v.z); }
+			Vector3 operator *(const double& s) const { return Vector3(x * s, y * s, z * s); }
 		};
 		//non member operator overloads
 		Vector3 operator *(const Vector3& a, const Vector3& b);

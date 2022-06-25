@@ -12,7 +12,7 @@ namespace Engine
 			return mag != 0 ? mag : 1; // return 1 to avoid possible division by zero errors in Normalize()
 		}
 		
-		double Vector3::AngleBetweenVectors(const Vector3& v)
+		double Vector3::AngleBetweenVectors(const Vector3& v) const
 		{
 			double magA = Magnitude(), magB = v.Magnitude();
 			double dot = DotProduct(*this, v);

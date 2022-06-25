@@ -1,5 +1,6 @@
 #pragma once
 #include "Test.h"
+#include <memory>
 using namespace Engine::Mathematics;
 
 namespace Testing
@@ -28,7 +29,8 @@ namespace Testing
 		double expOpp = 5.735764364;
 		auto expected = tuple<double, double>(expAdj, expOpp);
 		auto actual = Functions::RightTriangleGivenAngleAndHypotinuse(deg, hyp);
-		EXPECT_EQ(actual, expected);
+		EXPECT_EQ(roundTo(std::get<0>(actual), 8), roundTo(std::get<0>(expected), 8));
+		EXPECT_EQ(roundTo(std::get<1>(actual), 8), roundTo(std::get<1>(expected), 8));
 	}
 
 	TEST(TestFunctions, TestRightTriangleGivenAngleAndOpposite)
@@ -38,7 +40,8 @@ namespace Testing
 		double expHyp = 10.0;
 		auto expected = tuple<double, double>(expAdj, expHyp);
 		auto actual = Functions::RightTriangleGivenAngleAndOpposite(deg, opp);
-		EXPECT_EQ(actual, expected);
+		EXPECT_EQ(roundTo(std::get<0>(actual), 8), roundTo(std::get<0>(expected), 8));
+		EXPECT_EQ(roundTo(std::get<1>(actual), 8), roundTo(std::get<1>(expected), 8));
 	}
 
 	TEST(TestFunctions, TestRightTriangleGivenAngleAndAdjacent)
@@ -48,7 +51,8 @@ namespace Testing
 		double expHyp = 10.0;
 		auto expected = tuple<double, double>(expOpp, expHyp);
 		auto actual = Functions::RightTriangleGivenAngleAndAdjacent(deg, adj);
-		EXPECT_EQ(actual, expected);
+		EXPECT_EQ(roundTo(std::get<0>(actual), 8), roundTo(std::get<0>(expected), 8));
+		EXPECT_EQ(roundTo(std::get<1>(actual), 8), roundTo(std::get<1>(expected), 8));
 	}
 
 	TEST(TestFunctions, TestRightTriangleGivenOppositeAndAdjacent)
@@ -58,7 +62,8 @@ namespace Testing
 		double expDeg = 35.0;
 		auto expected = tuple<double, double>(expHyp, expDeg);
 		auto actual = Functions::RightTriangleGivenOppositeAndAdjacent(opp, adj);
-		EXPECT_EQ(actual, expected);
+		EXPECT_EQ(roundTo(std::get<0>(actual), 8), roundTo(std::get<0>(expected), 8));
+		EXPECT_EQ(roundTo(std::get<1>(actual), 8), roundTo(std::get<1>(expected), 8));
 	}
 
 	TEST(TestFunctions, TestRightTriangleGivenOppositeAndHypotinuse)
@@ -68,7 +73,8 @@ namespace Testing
 		double expDeg = 35.0;
 		auto expected = tuple<double, double>(expAdj, expDeg);
 		auto actual = Functions::RightTriangleGivenOppositeAndHypotinuse(opp, hyp);
-		EXPECT_EQ(actual, expected);
+		EXPECT_EQ(roundTo(std::get<0>(actual), 8), roundTo(std::get<0>(expected), 8));
+		EXPECT_EQ(roundTo(std::get<1>(actual), 8), roundTo(std::get<1>(expected), 8));
 	}
 
 	TEST(TestFunctions, TestRightTriangleGivenAdjacentAndHypotinuse)
@@ -78,7 +84,8 @@ namespace Testing
 		double expDeg = 35.0;
 		auto expected = tuple<double, double>(expOpp, expDeg);
 		auto actual = Functions::RightTriangleGivenAdjacentAndHypotinuse(adj, hyp);
-		EXPECT_EQ(actual, expected);
+		EXPECT_EQ(roundTo(std::get<0>(actual), 8), roundTo(std::get<0>(expected), 8));
+		EXPECT_EQ(roundTo(std::get<1>(actual), 8), roundTo(std::get<1>(expected), 8));
 	}
 
 	TEST(TestFunctions, TestRightQuadraticPositive)
